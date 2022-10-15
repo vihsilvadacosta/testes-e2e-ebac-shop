@@ -30,4 +30,11 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#password').type(senha, {log: false})
     cy.get('.woocommerce-form > .button').click()
 });
-
+Cypress.Commands.add('selecaoProdutos', (produto,tamanho, cor, quantidade) => {
+    cy.get(' .product-block ').contains(produto).click()
+    cy.get('.button-variable-item-'+tamanho).click()
+    cy.get('.button-variable-item-'+cor).click()
+    cy.get('.input-text').clear().type(quantidade)
+    cy.get('.single_add_to_cart_button').click()
+    cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
+});

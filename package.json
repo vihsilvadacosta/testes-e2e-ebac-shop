@@ -9,6 +9,7 @@
     "cy:run": "npx cypress run",
     "cy:dashboard": "",
     "cy:report": ""
+    
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
+  "bugs": {},
   "homepage": "",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "cypress": "^9.7.0"
   },
   "dependencies": {
