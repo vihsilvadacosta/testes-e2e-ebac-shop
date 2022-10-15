@@ -15,6 +15,7 @@ class enderecoPage {
         cy.get('#billing_phone').type(telefone)
         cy.get('#billing_email').type(email)
         cy.get('#terms').check()
+        cy.get('#payment_method_bacs').click()
         cy.get('#place_order').click()
     }
 
@@ -32,6 +33,7 @@ class enderecoPage {
         cy.get('#billing_phone').type(telefone)
         cy.get('#billing_email').type(email)
         cy.get('#terms').check()
+        cy.get('#payment_method_cod').click()
         cy.get('#createaccount').check()
         cy.get('#account_password').type(senha)
         cy.get('#place_order').click()
