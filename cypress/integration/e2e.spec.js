@@ -24,7 +24,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
         enderecoPage.faturamentoDetalhado('Vitória', 'Costa','EBAC','Brasil','Rua Luiz Fernandes', '64', 'São Paulo', 'SãO Paulo', '08531000', '988173100','teste@teste.com')
-      
+        cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.' )
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta - Com usuário que deseja se cadastrar', () => {
@@ -35,6 +35,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
         enderecoPage.faturamentoComCadastro('Vitória', 'Costa','EBAC','Brasil','Rua Luiz Fernandes', '64', 'São Paulo', 'SãO Paulo', '08531000', '988173100',emailFaker, 'teste45678@123')
+        cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.' )
     })
 
 
