@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 let dadosLogin
+import loginPage from '../support/commands'
 
 context('Funcionalidade Login', () => {
     before(() => {
@@ -33,6 +34,6 @@ context('Funcionalidade Login', () => {
         cy.get('#password').type(dadosLogin.senha, { log: false })
         cy.get('.woocommerce-form > .button').click()
         cy.get('.page-title').should('contain', 'Minha conta')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá')
     })
 })
